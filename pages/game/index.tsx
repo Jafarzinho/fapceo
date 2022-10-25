@@ -2,7 +2,7 @@ import useGame from "./useGame";
 import useStyles from "./useStyles";
 
 const Jogo = () => {
-  const { buttonStyle, containerStyle, individualAmountStyle } = useStyles();
+  const {buttonStyle, containerStyle, individualAmountStyle} = useStyles();
   const {
     news,
     employes,
@@ -13,7 +13,7 @@ const Jogo = () => {
     handleInputEmployes,
     handleInputBank,
     handleButton
-  } = useGame();
+} = useGame();
   return <>
     <div style={containerStyle}>
       <h1>
@@ -28,6 +28,7 @@ const Jogo = () => {
           id="newsInput"
           value={news}
           onChange={handleInputNews}
+
         />
         <br />  <br />
       </>
@@ -60,11 +61,11 @@ const Jogo = () => {
       </button>
       <br />  <br />
       <label>Melhor jogo: {individualAmount.map(individual => {
-        return <div style={individualAmountStyle}>{individual}</div>
+        return <div key={individual} style={individualAmountStyle}>{individual}</div>
       })}</label>
       <br />  <br />
       <label>Jogos: {indicesResult.map(indice => {
-        return <div style={individualAmountStyle}>{indice}</div>
+        return <div key={indice} style={individualAmountStyle}>{indice}</div>
       })}</label>
     </div>
   </>
